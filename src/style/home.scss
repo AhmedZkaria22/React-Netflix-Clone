@@ -1,0 +1,140 @@
+*{
+    box-sizing: border-box;
+}
+
+@import 'header';
+
+.home__hero{
+    background-color: black;
+    border-bottom: 0.5rem solid #222;
+    padding-left: 5%;
+    padding-right: 2.5%;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    &.homeHeroFlexRev{ flex-direction: row!important; }
+    &:first-of-type{ border-top: 0.5rem solid #222; }    
+   
+    @media (max-width: 599.9px){
+        padding-inline: 8%!important;
+        flex-direction: column-reverse;
+        padding-top: 5%!important;
+        &.homeHeroFlexRev{ flex-direction: column-reverse!important; }    
+        .home__hero__cover, .home__hero__desc{ width: 100%!important; }
+        .home__hero__desc{
+            text-align: center;
+            p{
+                &:first-of-type{ font-size: 2.0rem!important; }
+                &:last-of-type{
+                    font-size: calc(1.3rem + 0.0vw)!important;
+                }
+            }
+        }
+    }
+    @media (min-width: 600px) and (max-width: 925px){
+        padding-inline: 8%!important;
+        flex-direction: column-reverse;
+        padding-top: 5%!important;
+        &.homeHeroFlexRev{ flex-direction: column-reverse!important; }    
+        .home__hero__cover, .home__hero__desc{ width: 100%!important; }
+        .home__hero__desc{
+            text-align: center;
+            p{
+                &:first-of-type{ font-size: 2.7rem!important; }
+                &:last-of-type{
+                    font-size: calc(1.3rem + 0.0vw)!important;
+                }
+            }
+        }
+    }
+
+
+    .home__hero__cover{
+        width: 45%;
+        position: relative;
+        img{ min-width: 100%; }
+        .home__hero__cover__video{
+            position: absolute;
+            video{ width: 100%; height: 100%; }
+        }
+    }
+
+    &:nth-of-type(1) .home__hero__cover{
+        .home__hero__cover__video{
+            top: 20.5%;
+            left: 13%;
+            width: 73%;
+            height: 56%;
+            @media (max-width: 925px){ left: 13% !important; }
+        }    
+    }
+
+    &:nth-of-type(3) .home__hero__cover{
+        .home__hero__cover__video{
+            top: 11%;
+            left: 19%;
+            width: 61%;
+            height: 45%;
+            @media (max-width: 925px){ left: 19% !important; }
+        }    
+    }
+
+    .home__hero__desc{
+        width: 55%;
+        p{
+            color: white;
+            &:first-of-type{ font-size: 3.1rem; font-weight: 500; }
+            &:last-of-type{
+                font-size: calc(1.3rem + 0.6vw);
+            }
+        }
+    }
+}
+
+.Faq{
+    background-color: black;
+    overflow: auto;    
+    padding-bottom: 5rem;
+    h1{ color: white; margin-block: 5rem; text-align: center; }
+    .accordion{
+        margin-inline: 7%;
+        .accordion-item{
+            margin-bottom: 0.5rem;
+            border-radius: 0;
+            border: none;
+            .accordion-header{
+                background-color: #333;
+                .accordion-button{
+                    background-color: #333;
+                    color: white;    
+                    &:focus{
+                        border: none;
+                        outline: none;                     
+                        box-shadow: none;              
+                    }    
+                    &::after{
+                        background-image: url('../assets/imgs/plus.svg');
+                        transform: rotate(0deg)!important;
+                        color: white;    
+                        zoom: 1.2;
+                    }
+                    &:not(.collapsed)::after{
+                        background-image: url('../assets/imgs/plus.svg');
+                        transform: rotate(-45deg)!important;
+                    }
+                }
+            }
+            .accordion-collapse{
+                .accordion-body{
+                    border-top: 0.2rem solid black;
+                    background-color: #333;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+@import 'footer';
+
